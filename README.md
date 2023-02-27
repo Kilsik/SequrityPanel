@@ -8,7 +8,12 @@ Python3 should be already installed. Then use pip (or pip3, if there is a confli
 ```
 pip install -r requirements.txt
 ```
-To work, also set your DB settings via environment variables: HOST, PORT, BD_NAME, BD_USER, PASSWORD.
+To work, also set your DB settings via environment variable DATABASE_URL:
+```
+DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
+```
+DATABASE_URL must be valid URLs; in particular, special characters must be url-encoded.
+
 In the SECRET_KEY variable, save the secret key to access   your database.
 ### Project Goals
 The code is written for educational purposes on online-course for web-developers dvmn.org.
