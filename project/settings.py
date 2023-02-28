@@ -9,15 +9,15 @@ DATABASES = {
  'default': dj_database_url.config(conn_max_age=500)
 }
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.getenv('SECRET_KEY', 'REPLACE_ME')
 
 INSTALLED_APPS = ['datacenter']
 
-DEBUG = os.environ['DEBUG']
+DEBUG = os.environ.get('DEBUG', 'False')
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['ALLOWED_HOSTS']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
